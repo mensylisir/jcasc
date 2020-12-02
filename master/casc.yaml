@@ -3,8 +3,8 @@ jenkins:
     local:
       allowsSignup: false
       users:
-       - id: ${JENKINS_ADMIN_ID}
-         password: ${JENKINS_ADMIN_PASSWORD}
+       - id: admin
+         password: admin
   authorizationStrategy:
     globalMatrix:
       permissions:
@@ -26,6 +26,3 @@ security:
         strategy: triggeringUsersAuthorizationStrategy
 jobs:
   - file: /var/jenkins_home/seedjob.groovy
-unclassified:
-  location:
-    url: http://192.168.136.129:8080/
