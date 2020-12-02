@@ -1,4 +1,4 @@
-FROM jenkins/agent:latest
+FROM 192.168.80.54:8081/library/jenkins/jnlp-slave:latest
 USER root
 ARG MAVEN_VERSION=3.6.3
 ARG MAVEN_SHA=fae9c12b570c3ba18116a4e26ea524b29f7279c17cbaadc3326ca72927368924d9131d11b9e851b8dc9162228b6fdea955446be41207a5cfc61283dd8a561d2f
@@ -13,5 +13,3 @@ RUN  cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime && echo Asia/Shanghai >
 ENV MAVEN_HOME /usr/share/maven
 VOLUME /usr/share/maven/ref/repository
 COPY settings.xml /usr/share/maven/conf/settings.xml
-EXPOSE 50000
-ENTRYPOINT ["java", "-jar", "/usr/share/jenkins/agent.jar"]
