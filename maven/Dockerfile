@@ -13,4 +13,5 @@ RUN  cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime && echo Asia/Shanghai >
 ENV MAVEN_HOME /usr/share/maven
 VOLUME /usr/share/maven/ref/repository
 COPY settings.xml /usr/share/maven/conf/settings.xml
+EXPOSE 50000
 ENTRYPOINT ["java", "-jar", "/usr/share/jenkins/agent.jar"]
