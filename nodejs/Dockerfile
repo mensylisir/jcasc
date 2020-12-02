@@ -5,4 +5,4 @@ RUN wget -O node-v$NODE_VERSION-linux-x64.tar.gz "https://npm.taobao.org/mirrors
 	&& tar -xzvf node-v$NODE_VERSION-linux-x64.tar.gz -C /usr/share \
 	&& echo "export PATH=/usr/share/node-v$NODE_VERSION-linux-x64/bin:$PATH" >> /etc/profile \
 	&& source /etc/profile
-ENTRYPOINT ["node", "-v"]
+ENTRYPOINT ["java", "-jar", "/usr/share/jenkins/agent.jar"]
