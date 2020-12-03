@@ -3,9 +3,9 @@ ENV GO_VERSION 1.15.5
 USER root
 RUN wget -O go.tgz "https://dl.google.com/go/go$GO_VERSION.linux-amd64.tar.gz" \
 	&& tar -xzvf go.tgz -C /usr/share \
-	&& export PATH="/usr/share/go/bin:$PATH"
+	&& export PATH="/usr/local/go/bin:$PATH"
 ENV GOPATH /go
-ENV PATH $GOPATH/bin:/usr/share/go/bin:$PATH
+ENV PATH $GOPATH/bin:/usr/local/go/bin:$PATH
 EXPOSE 8080
 EXPOSE 50000
 WORKDIR $GOPATH
