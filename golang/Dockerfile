@@ -7,5 +7,4 @@ RUN wget -O go.tgz "https://dl.google.com/go/go$GO_VERSION.linux-amd64.tar.gz" \
 ENV GOPATH /go
 ENV PATH $GOPATH/bin:/usr/local/go/bin:$PATH
 EXPOSE 8080
-EXPOSE 50000
 WORKDIR $GOPATH
